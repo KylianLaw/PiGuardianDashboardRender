@@ -1,0 +1,64 @@
+d swservices:
+  - type: web
+    name: piguardian
+    env: python
+    plan: free
+
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"
+
+    envVars:
+      - key: ADAFRUIT_IO_USERNAME
+        sync: false
+      - key: ADAFRUIT_IO_KEY
+        sync: false
+      - key: MQTT_BROKER
+        sync: false
+      - key: MQTT_PORT
+        sync: false
+      - key: MQTT_KEEPALIVE
+        sync: false
+
+      - key: BUZZER_CONTROL_FEED
+        sync: false
+      - key: FEED_KEY
+        sync: false
+      - key: LCD_ADDR
+        sync: false
+      - key: LCD_COLS
+        sync: false
+      - key: LCD_ROWS
+        sync: false
+
+      - key: NEON_DB_URL
+        sync: false
+
+      # Optional intervals & settings
+      - key: CAPTURING_INTERVAL
+        sync: false
+      - key: FLUSHING_INTERVAL
+        sync: false
+      - key: SYNC_INTERVAL
+        sync: false
+      - key: SECURITY_CHECK_INTERVAL
+        sync: false
+      - key: SECURITY_SEND_INTERVAL
+        sync: false
+      - key: ENV_INTERVAL
+        sync: false
+
+      # Optional device / config arrays (Render can't store arrays → you set them as strings)
+      - key: DEVICES
+        sync: false
+      - key: CAMERA_ENABLED
+        sync: false
+      - key: BUZZER_MODE
+        sync: false
+      - key: BUZZER_PIN
+        sync: false
+      - key: BUZZER_FREQ
+        sync: false
+      - key: BUZZER_DUTY
+        sync: false
+      - key: BUZZER_ALARM_SECONDS
+        sync: false
