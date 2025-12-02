@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+
+{% block title %}About This Project{% endblock %}
+
+{% block content %}
+
+<div class="about-wrapper">
+
+    <section class="about-hero">
+        <h1 class="about-title">About PiGuardian</h1>
+        <p class="about-subtitle">
+            A smart home monitoring system powered by Raspberry Pi, Adafruit IO, PostgreSQL (Neon), and a Flask web dashboard.
+        </p>
+    </section>
+
+    <!-- PROJECT DESCRIPTION -->
+    <section class="about-section">
+        <h2 class="about-heading">Project Overview</h2>
+        <p class="about-text">
+            PiGuardian is a complete IoT ecosystem designed to monitor your home’s environment and security in real time.
+            It collects temperature, humidity, and motion information from the Raspberry Pi, stores the data securely in
+            a cloud PostgreSQL database, and visualizes it through an interactive Flask dashboard.  
+        </p>
+
+        <p class="about-text">
+            Users can view historical environmental charts, monitor live sensor data, review intrusion logs, and remotely
+            control IoT devices such as LEDs, a buzzer alarm, and an LCD display. The system integrates cloud services
+            (Adafruit IO and Neon DB) and is fully deployed on Render.com for reliable access anywhere.
+        </p>
+    </section>
+
+    <!-- TEAM SECTION -->
+    <section class="about-section">
+        <h2 class="about-heading">Meet the Team</h2>
+
+        <div class="team-container">
+
+            <div class="team-card">
+                <img src="/static/img/profile1.png" class="team-photo">
+                <h3 class="team-name">Ilian Lawson</h3>
+                <p class="team-role">IoT Engineer & Full-Stack Developer</p>
+                <p class="team-desc">
+                    Designed the system architecture, coded the Flask web platform, integrated cloud databases,
+                    and implemented device control, environmental monitoring, and security visualizations.
+                </p>
+            </div>
+
+            <div class="team-card">
+                <img src="/static/img/profile2.png" class="team-photo">
+                <h3 class="team-name">Cedric Augustin</h3>
+                <p class="team-role">Hardware & Raspberry Pi Specialist</p>
+                <p class="team-desc">
+                    Co-responsible for sensor wiring, hardware assembly, and ensuring accurate data
+                    collection from the Raspberry Pi peripheral modules.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- COPYRIGHT -->
+    <footer class="about-footer">
+        <p>© 2025 PiGuardian — All Rights Reserved.</p>
+    </footer>
+
+</div>
+
+<!-- OPTIONAL BASIC CSS (add to style.css if you want improved visuals) -->
+<style>
+.about-wrapper {
+    max-width: 900px;
+    margin: auto;
+    padding: 30px;
+}
+
+.about-hero {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.about-title {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.about-subtitle {
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+.about-section {
+    margin-bottom: 40px;
+}
+
+.about-heading {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.about-text {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.team-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.team-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    width: 250px;
+    text-align: center;
+}
+
+.team-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+.about-footer {
+    text-align: center;
+    margin-top: 30px;
+    opacity: 0.7;
+}
+</style>
+
+{% endblock %}
