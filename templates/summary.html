@@ -1,20 +1,52 @@
 {% extends "base.html" %}
 
-{% block title %}System Overview{% endblock %}
+{% block title %}PiGuardian – Home{% endblock %}
 
 {% block content %}
 <div class="summary-page">
 
-    <header class="summary-header">
-        <div>
-            <h1 class="summary-title">System Overview</h1>
-            <p class="summary-subtitle">
-                Snapshot of your home environment and quick navigation.
+    <!-- HERO / PROJECT PROMO -->
+    <section class="summary-hero">
+        <div class="summary-hero__text">
+            <p class="summary-hero__eyebrow">Welcome to</p>
+            <h1 class="summary-hero__title">PiGuardian Smart Home Dashboard</h1>
+            <p class="summary-hero__subtitle">
+                Monitor your home environment, control your IoT devices
+                and keep your security system under control – all from one place.
+            </p>
+
+            <div class="summary-hero__badges">
+                <span class="summary-hero__badge">🌡 Live environment data</span>
+                <span class="summary-hero__badge">🛡 Motion &amp; smoke security</span>
+                <span class="summary-hero__badge">💡 Remote device control</span>
+            </div>
+
+            <div class="summary-hero__cta-row">
+                <a class="summary-btn summary-btn--primary" href="{{ url_for('environment_page') }}">
+                    View environment
+                </a>
+                <a class="summary-btn summary-btn--ghost" href="{{ url_for('security_control') }}">
+                    Open security center
+                </a>
+            </div>
+        </div>
+
+        <!-- Animated “image” (CSS animated orb) -->
+        <div class="summary-hero__visual">
+            <div class="summary-hero__orb">
+                <div class="summary-hero__icon">🏠</div>
+                <div class="summary-hero__pulse summary-hero__pulse--one"></div>
+                <div class="summary-hero__pulse summary-hero__pulse--two"></div>
+            </div>
+            <p class="summary-hero__visual-caption">
+                Your home at a glance – updated in real time.
             </p>
         </div>
-    </header>
+    </section>
 
+    <!-- MAIN GRID: 3 environment cards -->
     <section class="summary-grid">
+        <!-- Temperature card -->
         <article class="summary-card">
             <div class="summary-card__header">
                 <span class="summary-card__label">Temperature</span>
@@ -30,6 +62,7 @@
             </p>
         </article>
 
+        <!-- Humidity card -->
         <article class="summary-card">
             <div class="summary-card__header">
                 <span class="summary-card__label">Humidity</span>
@@ -45,6 +78,7 @@
             </p>
         </article>
 
+        <!-- Pressure card (simulated) -->
         <article class="summary-card">
             <div class="summary-card__header">
                 <span class="summary-card__label">Pressure</span>
@@ -61,17 +95,21 @@
         </article>
     </section>
 
+    <!-- QUICK ACTIONS -->
     <section class="summary-actions">
-        <h2 class="summary-actions__title">Quick Actions</h2>
+        <h2 class="summary-actions__title">Quick navigation</h2>
         <div class="summary-actions__buttons">
             <a class="summary-btn summary-btn--primary" href="{{ url_for('environment_page') }}">
-                View Environment
+                Environment dashboard
             </a>
             <a class="summary-btn summary-btn--warning" href="{{ url_for('security_control') }}">
-                Manage Security
+                Security center
             </a>
             <a class="summary-btn summary-btn--ghost" href="{{ url_for('devices_control') }}">
-                Control Devices
+                Device control
+            </a>
+            <a class="summary-btn summary-btn--ghost" href="{{ url_for('about_page') }}">
+                About this project
             </a>
         </div>
     </section>
