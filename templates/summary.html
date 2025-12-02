@@ -1,50 +1,30 @@
 {% extends "base.html" %}
 
-{% block title %}PiGuardian – Home{% endblock %}
+{% block title %}System Overview{% endblock %}
 
 {% block content %}
 <div class="summary-page">
 
-    <!-- HERO / PROJECT PROMO -->
-    <section class="summary-hero">
-        <div class="summary-hero__text">
-            <p class="summary-hero__eyebrow">Welcome to</p>
-            <h1 class="summary-hero__title">PiGuardian Smart Home Dashboard</h1>
-            <p class="summary-hero__subtitle">
-                Monitor your home environment, control your IoT devices
-                and keep your security system under control – all from one place.
-            </p>
-
-            <div class="summary-hero__badges">
-                <span class="summary-hero__badge">🌡 Live environment data</span>
-                <span class="summary-hero__badge">🛡 Motion &amp; smoke security</span>
-                <span class="summary-hero__badge">💡 Remote device control</span>
-            </div>
-
-            <div class="summary-hero__cta-row">
-                <a class="summary-btn summary-btn--primary" href="{{ url_for('environment_page') }}">
-                    View environment
-                </a>
-                <a class="summary-btn summary-btn--ghost" href="{{ url_for('security_control') }}">
-                    Open security center
-                </a>
-            </div>
-        </div>
-
-        <!-- Animated “image” (CSS animated orb) -->
-        <div class="summary-hero__visual">
-            <div class="summary-hero__orb">
-                <div class="summary-hero__icon">🏠</div>
-                <div class="summary-hero__pulse summary-hero__pulse--one"></div>
-                <div class="summary-hero__pulse summary-hero__pulse--two"></div>
-            </div>
-            <p class="summary-hero__visual-caption">
-                Your home at a glance – updated in real time.
+    <!-- HEADER -->
+    <header class="summary-header">
+        <div>
+            <h1 class="summary-title">PiGuardian Dashboard</h1>
+            <p class="summary-subtitle">
+                Monitor your home environment, security events, and devices from one place.
             </p>
         </div>
+    </header>
+
+    <!-- PROMO STRIP WITH LIGHT ANIMATION -->
+    <section class="summary-promo">
+        <div class="summary-promo__badge">Live</div>
+        <p class="summary-promo__text">
+            PiGuardian is streaming real-time data from your Raspberry&nbsp;Pi to the cloud —
+            temperature, humidity, security events, and remote device control on any browser.
+        </p>
     </section>
 
-    <!-- MAIN GRID: 3 environment cards -->
+    <!-- MAIN GRID: 3 environment cards + quick actions -->
     <section class="summary-grid">
         <!-- Temperature card -->
         <article class="summary-card">
@@ -97,19 +77,16 @@
 
     <!-- QUICK ACTIONS -->
     <section class="summary-actions">
-        <h2 class="summary-actions__title">Quick navigation</h2>
+        <h2 class="summary-actions__title">Quick Actions</h2>
         <div class="summary-actions__buttons">
             <a class="summary-btn summary-btn--primary" href="{{ url_for('environment_page') }}">
-                Environment dashboard
+                View Environment
             </a>
             <a class="summary-btn summary-btn--warning" href="{{ url_for('security_control') }}">
-                Security center
+                Manage Security
             </a>
-            <a class="summary-btn summary-btn--ghost" href="{{ url_for('devices_control') }}">
-                Device control
-            </a>
-            <a class="summary-btn summary-btn--ghost" href="{{ url_for('about_page') }}">
-                About this project
+            <a class="summary-btn summary-btn--ghost" href "{{ url_for('devices_control') }}">
+                Control Devices
             </a>
         </div>
     </section>
