@@ -77,7 +77,6 @@ def ensure_security_state(conn):
     This function is idempotent and can be called safely many times.
     """
     with conn.cursor() as cur:
-        # 1) Create table if it doesn't exist at all
         cur.execute(
             """
             CREATE TABLE IF NOT EXISTS security_state (
@@ -86,7 +85,6 @@ def ensure_security_state(conn):
             """
         )
 
-        # 2) Add 'mode' column if missing
         cur.execute(
             """
             SELECT column_name
@@ -101,7 +99,6 @@ def ensure_security_state(conn):
                 "ADD COLUMN mode VARCHAR(20) NOT NULL DEFAULT 'disarmed';"
             )
 
-        # 3) Add 'updated_at' column if missing (optional, but useful)
         cur.execute(
             """
             SELECT column_name
@@ -116,7 +113,6 @@ def ensure_security_state(conn):
                 "ADD COLUMN updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW();"
             )
 
-        # 4) Ensure there is a row with id=1
         cur.execute("SELECT id FROM security_state WHERE id = 1;")
         if cur.fetchone() is None:
             cur.execute(
@@ -215,7 +211,6 @@ def api_env_history():
 
     conn.close()
 
-    # Build arrays for charts
     labels = []
     temps = []
     hums = []
@@ -237,7 +232,6 @@ def api_env_history():
         temps.append(r.get("temperature"))
         hums.append(r.get("humidity"))
 
-        # Simulated pressure curve around 1013 hPa
         base = 1013.0
         jitter = (len(pressures) % 5) * 0.4
         pressures.append(round(base + jitter, 2))
@@ -317,7 +311,6 @@ def security_control():
     return render_template("security.html")
 
 
-# -------------------- CHART DATA (SQLite) --------------------
 
 
 # -------------------- DEVICE CONTROL (Adafruit IO) --------------------
@@ -367,7 +360,6 @@ def api_security_mode():
         conn.close()
         return jsonify({"mode": mode})
 
-    # POST -> change mode
     data = request.get_json() or {}
     mode = (data.get("mode") or "").lower()
     if mode not in ("armed", "disarmed"):
