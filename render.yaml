@@ -33,7 +33,6 @@ d swservices:
       - key: NEON_DB_URL
         sync: false
 
-      # Optional intervals & settings
       - key: CAPTURING_INTERVAL
         sync: false
       - key: FLUSHING_INTERVAL
@@ -47,7 +46,6 @@ d swservices:
       - key: ENV_INTERVAL
         sync: false
 
-      # Optional device / config arrays (Render can't store arrays → you set them as strings)
       - key: DEVICES
         sync: false
       - key: CAMERA_ENABLED
