@@ -163,7 +163,10 @@ def home():
 def environment_page():
     return render_template("environment.html")
 
-
+@app.route("/about")
+def about_page():
+    return render_template("about.html")
+    
 @app.route("/api/environment/history")
 def api_env_history():
     """
