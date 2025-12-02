@@ -15,7 +15,7 @@ The system communicates using:
 - **MQTT → Adafruit IO** (live sensor publishing + device control)  
 - **REST → Neon PostgreSQL** (historical storage + queries for charts)  
 - **Flask + Chart.js** (web dashboard with analytics)
-
+- **Render.com link** https://piguardiandashboardrender.onrender.com/
 ---
 
 # 🏗️ System Architecture (Required in Milestone 3)
