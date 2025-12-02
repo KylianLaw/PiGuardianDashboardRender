@@ -16,7 +16,10 @@ The system communicates using:
 - **REST → Neon PostgreSQL** (historical storage + queries for charts)  
 - **Flask + Chart.js** (web dashboard with analytics)
 - **Render.com link** https://piguardiandashboardrender.onrender.com/
+- **Link for github flask** https://github.com/KylianLaw/PiGuardianDashboardRender.git
+- **Link for milestone 2 and .py files**  https://github.com/KylianLaw/milestone2IOT.git
 ---
+
 
 # 🏗️ System Architecture (Required in Milestone 3)
 📌 <img width="307" height="764" alt="image" src="https://github.com/user-attachments/assets/105bf9b1-1a4f-418f-ad29-f9defb873b68" />
