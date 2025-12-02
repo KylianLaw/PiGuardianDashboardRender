@@ -87,7 +87,6 @@
 
 </div>
 
-<!-- Simple inline JS (or move to a separate JS file) -->
 <script>
   // Handle ON/OFF buttons for buzzer + LEDs
   document.querySelectorAll('.device-card').forEach(card => {
@@ -121,7 +120,6 @@
     }
   }
 
-  // Handle LCD send
   document.querySelector('.btn-send').addEventListener('click', async () => {
     const msgInput = document.getElementById('lcd-message');
     const currentSpan = document.getElementById('lcd-current-text');
