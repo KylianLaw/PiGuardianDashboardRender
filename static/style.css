@@ -877,3 +877,50 @@ body {
     transform: translateY(-4px);
     box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
 }
+
+/* === Summary promo strip on home page === */
+
+.summary-promo {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 0.9rem 1.2rem;
+  border-radius: 14px;
+  background: linear-gradient(90deg, #ff9800, #ffb74d);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.summary-promo__badge {
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: rgba(0, 0, 0, 0.22);
+  animation: promo-pulse 1.8s ease-in-out infinite;
+}
+
+.summary-promo__text {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* subtle pulse animation for the "Live" badge */
+@keyframes promo-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
