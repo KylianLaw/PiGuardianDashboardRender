@@ -20,7 +20,6 @@ The system communicates using:
 - **Link for milestone 2 and .py files**  https://github.com/KylianLaw/milestone2IOT.git
 ---
 
-
 # 🏗️ System Architecture (Required in Milestone 3)
 📌 <img width="307" height="764" alt="image" src="https://github.com/user-attachments/assets/105bf9b1-1a4f-418f-ad29-f9defb873b68" />
 
@@ -117,6 +116,8 @@ Stores:
 - Chart.js graphs  
 📌 <img width="1705" height="854" alt="image" src="https://github.com/user-attachments/assets/4ff1f736-f2c2-4593-bc16-f8a68104c180" />
 
+VERSION 2 with timestamp updated 
+<img width="1480" height="675" alt="image" src="https://github.com/user-attachments/assets/01ff4152-40f6-4b33-b2ba-99ec4048cde3" />
 
 ---
 
@@ -134,6 +135,10 @@ Stores:
 - Motion graph (24h)  
 📌 <img width="1560" height="898" alt="image" src="https://github.com/user-attachments/assets/5ddfb440-aa71-40f7-aabf-2c5aab153877" />
     <img width="1547" height="489" alt="image" src="https://github.com/user-attachments/assets/04b1d951-301e-4bf8-9545-647cba4860f7" />
+
+VERSION 2 with timestamp updated 
+<img width="1506" height="668" alt="image" src="https://github.com/user-attachments/assets/91f5de15-d2bd-4675-8f1a-12ae5e03498b" />
+
 
 
 
@@ -250,7 +255,15 @@ YYYYMMDD_device_status.txt        |
 
 📝 Reflection
 
-This project presented several challenges that required persistence and problem-solving. At the beginning, we were two weeks behind on Milestone 2 because our Raspberry Pi had not yet arrived, which created significant pressure on our schedule. Despite the delay, we managed to catch up by organizing our work efficiently and splitting tasks strategically between team members. Another major obstacle was dealing with Adafruit IO keys, which caused frequent issues with authentication and API access. At times, the keys would stop working unexpectedly, leaving us unable to push data or control devices until we regenerated credentials. We also ran into GitHub’s push-protection system, which blocked our commits because the configuration file accidentally contained sensitive keys. This forced us to redo commits, rewrite history, and re-structure our environment handling to protect the project. In the end, these difficulties helped us better understand secure development practices and made our system more robust and professional.
+This project presented several challenges that required persistence and problem-solving.
+At the beginning, we were two weeks behind on Milestone 2 because our Raspberry Pi had not yet arrived, which created significant pressure on our schedule.
+Despite the delay, we managed to catch up by organizing our work efficiently and splitting tasks strategically between team members.
+Another major obstacle was dealing with Adafruit IO keys, which caused frequent issues with authentication and API access.
+At times, the keys would stop working unexpectedly, leaving us unable to push data or control devices until we regenerated credentials.
+We also ran into GitHub’s push-protection system, which blocked our commits because the configuration file accidentally contained sensitive keys.
+This forced us to redo commits, rewrite history, and re-structure our environment handling to protect the project.
+In the end, these difficulties helped us better understand secure development practices and made our system more robust and professional.
+
 
 
 
