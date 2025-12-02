@@ -111,7 +111,6 @@
 
 {% block scripts %}
 {{ super() }}
-<!-- Chart.js from CDN -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
@@ -135,7 +134,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let tempChart, humChart, pressChart;
 
-    // ---------- SUMMARY (latest reading) ----------
     async function loadSummary() {
         try {
             const resp = await fetch("/api/environment/summary");
@@ -214,7 +212,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 options: { responsive: true, maintainAspectRatio: false }
             });
 
-            // Pressure chart (simulated)
             if (pressChart) pressChart.destroy();
             pressChart = new Chart(pressCtx, {
                 type: "line",
@@ -238,7 +235,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // When the date changes, reload history
     if (dateInput) {
         dateInput.addEventListener("change", () => {
             if (dateInput.value) {
